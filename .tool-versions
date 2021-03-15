@@ -1,0 +1,6 @@
+# synchronize with Dockerfile:
+ruby 2.6.6
+nodejs 14.15.3
+
+# synchronize with nulogy-deployer version
+terraform 0.12.29
