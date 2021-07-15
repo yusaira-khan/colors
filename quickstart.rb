@@ -1,17 +1,16 @@
-
 require "google/apis/sheets_v4"
 require "googleauth"
 require "googleauth/stores/file_token_store"
 require "fileutils"
 
 OOB_URI = "urn:ietf:wg:oauth:2.0:oob".freeze
-APPLICATION_NAME = "Google Sheets API Ruby Quickstart".freeze
+APPLICATION_NAME = "Colors".freeze
 CREDENTIALS_PATH = "credentials.json".freeze
 # The file token.yaml stores the user's access and refresh tokens, and is
 # created automatically when the authorization flow completes for the first
 # time.
 TOKEN_PATH = "token.yaml".freeze
-SCOPE = Google::Apis::SheetsV4::AUTH_SPREADSHEETS_READONLY
+SCOPE = Google::Apis::SheetsV4::AUTH_SPREADSHEETS
 
 ##
 # Ensure valid credentials, either by restoring from the saved credentials
@@ -42,12 +41,11 @@ service = Google::Apis::SheetsV4::SheetsService.new
 service.client_options.application_name = APPLICATION_NAME
 service.authorization = authorize
 
-# Prints the names and majors of students in a sample spreadsheet:
-# https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
-spreadsheet_id = "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms"
-range = "Class Data!A2:E"
+#  color sheet
+# https://docs.google.com/spreadsheets/d/1IkopCk9rRuMgTj29LhtFXvVeIqJQ29P8XsrLxIlECVY/edit#gid=0
+spreadsheet_id = "1IkopCk9rRuMgTj29LhtFXvVeIqJQ29P8XsrLxIlECVY"
+range = "A2:E2"
 response = service.get_spreadsheet_values spreadsheet_id, range
-puts "Name, Major:"
 puts "No data found." if response.values.empty?
 response.values.each do |row|
   # Print columns A and E, which correspond to indices 0 and 4.
