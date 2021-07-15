@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "google-apis-sheets_v4"
-gem "googleauth"
+gem "google-api-client"
 
 # development
 gem "rake"

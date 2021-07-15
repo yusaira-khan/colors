@@ -5,11 +5,11 @@ require "fileutils"
 
 OOB_URI = "urn:ietf:wg:oauth:2.0:oob".freeze
 APPLICATION_NAME = "Colors".freeze
-CREDENTIALS_PATH = "credentials.json".freeze
+CREDENTIALS_PATH = "sensitive/credentials.json".freeze
 # The file token.yaml stores the user's access and refresh tokens, and is
 # created automatically when the authorization flow completes for the first
 # time.
-TOKEN_PATH = "token.yaml".freeze
+TOKEN_PATH = "sensitive/token.yaml".freeze
 SCOPE = Google::Apis::SheetsV4::AUTH_SPREADSHEETS
 
 ##
