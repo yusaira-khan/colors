@@ -1,7 +1,9 @@
+#Modified from quickstart.rb from google sheets
 require "google/apis/sheets_v4"
 require "googleauth"
 require "googleauth/stores/file_token_store"
 require "fileutils"
+
 
 OOB_URI = "urn:ietf:wg:oauth:2.0:oob".freeze
 APPLICATION_NAME = "Colors".freeze
@@ -42,12 +44,8 @@ service.client_options.application_name = APPLICATION_NAME
 service.authorization = authorize
 
 #  color sheet
-# https://docs.google.com/spreadsheets/d/1IkopCk9rRuMgTj29LhtFXvVeIqJQ29P8XsrLxIlECVY/edit#gid=0
-spreadsheet_id = "1IkopCk9rRuMgTj29LhtFXvVeIqJQ29P8XsrLxIlECVY"
-range = "A2:E2"
+metadata = YAML.load_file("sensitive/sheet.yaml")
+spreadsheet_id = metadata["sheet_id"]
+range = metadata["example"]
 response = service.get_spreadsheet_values spreadsheet_id, range
-puts "No data found." if response.values.empty?
-response.values.each do |row|
-  # Print columns A and E, which correspond to indices 0 and 4.
-  puts "#{row[0]}, #{row[4]}"
-end
+puts response.values
