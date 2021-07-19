@@ -3,5 +3,5 @@
 trap "echo Exited!; exit;" SIGINT SIGTERM
 
 while true; do
-   ag -g '\.rb$' | entr -c -d -p -s 'bundle exec ruby colors.rb'
+   ag -g '\.rb$' | entr -c -d -p -s 'bundle exec ruby colors_spec.rb'
 done
