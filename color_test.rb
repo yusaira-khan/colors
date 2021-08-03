@@ -1,7 +1,10 @@
 require 'minitest/autorun'
-def _
+def hsb
 
 end
 class ColorTest < Minitest::Test
 
+  def test_hsb
+    hsb
+  end
 end
