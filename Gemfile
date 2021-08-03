@@ -8,6 +8,7 @@ gem "rake"
 gem "reek"
 gem "rubocop"
 gem "whats_up"
+gem "pry"
 
 # test
 gem "minitest"
