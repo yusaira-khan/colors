@@ -12,7 +12,9 @@ GEM
     ansi (1.5.0)
     ast (2.4.2)
     builder (3.2.4)
+    chroma (0.2.0)
     coderay (1.1.3)
+    color_conversion (0.1.1)
     concurrent-ruby (1.1.9)
     declarative (0.0.20)
     diff-lcs (1.4.4)
@@ -151,6 +153,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  chroma
+  color_conversion
   google-api-client
   google-apis-sheets_v4
   minitest

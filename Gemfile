@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 gem "google-apis-sheets_v4"
 gem "google-api-client"
+gem "color_conversion"
+gem 'chroma'
 
 # development
 gem "rake"
