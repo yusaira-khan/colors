@@ -10,3 +10,6 @@
 .node-gyp
 .rspec_status
 node_modules
+__pycache__/
+*.py[cod]
+*$py.class
